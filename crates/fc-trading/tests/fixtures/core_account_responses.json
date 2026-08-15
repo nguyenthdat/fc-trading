@@ -1,0 +1,173 @@
+{
+  "cash_account_balance": {
+    "status": 200,
+    "message": "ok",
+    "data": {
+      "account": "123456",
+      "cashBal": 1001,
+      "cashOnHold": 1002,
+      "secureAmount": 1003,
+      "withdrawable": 1004,
+      "receivingCashT1": 1005,
+      "receivingCashT2": 1006,
+      "matchedBuyVolume": 1007,
+      "matchedSellVolume": 1008,
+      "unMatchedBuyVolume": 1009,
+      "unMatchedSellVolume": 1010,
+      "paidCashT1": 1011,
+      "paidCashT2": 1012,
+      "cia": 1013,
+      "debt": 1014,
+      "purchasingPower": 1015,
+      "totalAssets": 1016
+    }
+  },
+  "derivative_account_balance": {
+    "status": 200,
+    "message": "ok",
+    "data": {
+      "account": "123456",
+      "accountBalance": 2001,
+      "fee": 2002,
+      "commission": 2003,
+      "interest": 2004,
+      "loan": 2005,
+      "deliveryAmount": 2006,
+      "floatingPL": 2007,
+      "totalPL": 2008,
+      "marginable": 2009,
+      "depositable": 2010,
+      "rcCall": 2011,
+      "withdrawable": 2012,
+      "nonCashDrawableRCCall": 2013,
+      "internalAssets": {
+        "cash": 2101,
+        "validNonCash": 2102,
+        "totalValue": 2103,
+        "maxValidNonCash": 2104,
+        "cashWithdrawable": 2105,
+        "ee": 2106
+      },
+      "exchangeAssets": {
+        "cash": 2201,
+        "validNonCash": 2202,
+        "totalValue": 2203,
+        "maxValidNonCash": 2204,
+        "cashWithdrawable": 2205,
+        "ee": 2206
+      },
+      "internalMargin": {
+        "initialMargin": 2301,
+        "deliveryMargin": 2302,
+        "marginReq": 2303,
+        "accountRatio": 2304,
+        "usedLimitWarningLevel1": 2305,
+        "usedLimitWarningLevel2": 2306,
+        "usedLimitWarningLevel3": 2307,
+        "marginCall": 2308
+      },
+      "exchangeMargin": {
+        "marginReq": 2401,
+        "accountRatio": 2402,
+        "usedLimitWarningLevel1": 2403,
+        "usedLimitWarningLevel2": 2404,
+        "usedLimitWarningLevel3": 2405,
+        "marginCall": 2406
+      }
+    }
+  },
+  "ppmmr_account_balance": {
+    "status": 200,
+    "message": "ok",
+    "data": {
+      "collateralAsset": 3001,
+      "callLMW": 3002,
+      "liability": 3003,
+      "eeOrigin": 3004,
+      "forceLMV": 3005,
+      "equity": 3006,
+      "ee": 3007,
+      "callMargin": 3008,
+      "cashBalance": 3009,
+      "purchasingPower": 3010,
+      "callForcesell": 3011,
+      "lmv": 3012,
+      "marginCall": 3013,
+      "withdrawal": 3014,
+      "collateralA": 3015,
+      "action": "normal",
+      "marginRatio": 3016,
+      "debt": 3017,
+      "accruedInterest": 3018,
+      "holdRight": 3019,
+      "preLoan": 3020,
+      "fees": 3021,
+      "buyUnmatch": 3022,
+      "ap": 3023,
+      "apT1": 3024,
+      "sellUnmatch": 3025,
+      "cia": 3026,
+      "ar": 3027,
+      "arT1": 3028,
+      "ppCredit": 3029,
+      "creditLimit": 3030,
+      "totalAssets": 3031,
+      "marginCallLMVSold": 3032,
+      "lmvNonMarginable": 3033,
+      "eeCredit": 3034,
+      "totalEquity": 3035,
+      "eE90": 3036,
+      "eE80": 3037,
+      "eE70": 3038,
+      "eE60": 3039,
+      "eE50": 3040
+    }
+  },
+  "stock_position": {
+    "status": 200,
+    "message": "ok",
+    "data": {
+      "account": "123456",
+      "totalMarketValue": 4001,
+      "stockPositions": [{
+        "marketID": "VN",
+        "instrumentID": "FPT",
+        "onHand": 10,
+        "block": 1,
+        "bonus": 2,
+        "buyT0": 3,
+        "buyT1": 4,
+        "buyT2": 5,
+        "sellT0": 6,
+        "sellT1": 7,
+        "sellT2": 8,
+        "avgPrice": 12345.5,
+        "mortgage": 9,
+        "sellableQty": 10,
+        "holdForTrade": 11,
+        "marketPrice": 13000
+      }]
+    }
+  },
+  "derivative_position": {
+    "status": 200,
+    "message": "ok",
+    "data": {
+      "account": "123456",
+      "openPosition": [{
+        "marketID": "VNFE",
+        "instrumentID": "VN30F2601",
+        "longQty": 1,
+        "shortQty": 2,
+        "net": -1,
+        "bidAvgPrice": 1300.5,
+        "askAvgPrice": 1301.5,
+        "tradePrice": 1302.5,
+        "marketPrice": 1303.5,
+        "floatingPL": 20,
+        "tradingPL": 30
+      }],
+      "closePosition": []
+    }
+  }
+}
