@@ -1,0 +1,24 @@
+[package]
+name = "fctrading-cli"
+version = "0.1.0"
+description = "Safe diagnostics CLI for SSI FastConnect Trading"
+keywords = ["cli", "finance", "ssi", "trading"]
+categories = ["command-line-utilities", "finance"]
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme = "README.md"
+
+[dependencies]
+clap.workspace = true
+color-eyre.workspace = true
+dotenvy.workspace = true
+ssi-fc-trading = { path = "../fc-trading" }
+rpassword.workspace = true
+secrecy.workspace = true
+tokio.workspace = true
+zeroize.workspace = true
+
+[lints]
+workspace = true
