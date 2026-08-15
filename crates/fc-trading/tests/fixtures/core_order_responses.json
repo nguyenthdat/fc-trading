@@ -1,0 +1,146 @@
+{
+  "raw": { "status": 200, "message": "ok", "data": { "quota": 10 } },
+  "max_buy_quantity": {
+    "status": 200,
+    "message": "ok",
+    "data": { "account": "123456", "maxBuyQty": 10, "marginRatio": "50", "purchasingPower": 100000 }
+  },
+  "max_sell_quantity": {
+    "status": 200,
+    "message": "ok",
+    "data": { "account": "123456", "maxSellQty": 9 }
+  },
+  "new_order": {
+    "status": 200,
+    "message": "ok",
+    "data": {
+      "requestID": "42",
+      "requestData": {
+        "instrumentID": "FPT",
+        "market": "VN",
+        "buySell": "B",
+        "orderType": "LO",
+        "channelID": "TA",
+        "price": 12345.5,
+        "quantity": 10,
+        "account": "123456",
+        "stopOrder": false,
+        "stopPrice": 0,
+        "stopType": "",
+        "stopStep": 0,
+        "lossStep": 0,
+        "profitStep": 0
+      }
+    }
+  },
+  "modify_order": {
+    "status": 200,
+    "message": "ok",
+    "data": {
+      "RequestID": "43",
+      "RequestData": {
+        "OrderID": "order-1",
+        "Price": 12346,
+        "Quantity": 9,
+        "Account": "123456",
+        "InstrumentID": "FPT",
+        "MarketID": "VN",
+        "BuySell": "B",
+        "OrderType": "LO"
+      }
+    }
+  },
+  "cancel_order": {
+    "status": 200,
+    "message": "ok",
+    "data": {
+      "RequestID": "44",
+      "RequestData": {
+        "OrderID": "order-1",
+        "account": "123456",
+        "MarketID": "VN",
+        "InstrumentID": "FPT",
+        "BuySell": "B",
+        "RequestID": "44"
+      }
+    }
+  },
+  "order_history": {
+    "status": 200,
+    "message": "ok",
+    "data": {
+      "account": "123456",
+      "orderHistories": [{
+        "uniqueID": null,
+        "orderID": "order-1",
+        "buySell": "B",
+        "price": 12345.5,
+        "quantity": 10,
+        "filledQty": 2,
+        "orderStatus": "PF",
+        "marketID": "VN",
+        "inputTime": "1",
+        "modifiedTime": "2",
+        "instrumentID": "FPT",
+        "orderType": "LO",
+        "cancelQty": 0,
+        "avgPrice": 12345.5,
+        "isForcesell": null,
+        "isShortsell": null
+      }]
+    }
+  },
+  "order_book": {
+    "Status": 200,
+    "Message": "ok",
+    "Data": {
+      "account": "123456",
+      "orders": [{
+        "uniqueID": "unique-1",
+        "orderID": "order-1",
+        "buySell": "B",
+        "price": 12345.5,
+        "quantity": 10,
+        "filledQty": 2,
+        "orderStatus": "PF",
+        "marketID": "VN",
+        "inputTime": "1",
+        "modifiedTime": "2",
+        "instrumentID": "FPT",
+        "orderType": "LO",
+        "cancelQty": 0,
+        "avgPrice": 12345.5,
+        "isForceSell": "F",
+        "isShortSell": "F",
+        "rejectReason": ""
+      }]
+    }
+  },
+  "audit_order_book": {
+    "status": 200,
+    "message": "ok",
+    "data": {
+      "account": "123456",
+      "orders": [{
+        "uniqueID": "unique-1",
+        "orderID": "order-1",
+        "buySell": "B",
+        "price": 12345.5,
+        "quantity": 10,
+        "filledQty": 2,
+        "orderStatus": "PF",
+        "marketID": "VN",
+        "inputTime": "1",
+        "modifiedTime": "2",
+        "instrumentID": "FPT",
+        "orderType": "LO",
+        "cancelQty": 0,
+        "avgPrice": 12345.5,
+        "isForcesell": "F",
+        "isShortsell": "F",
+        "rejectReason": "",
+        "lastErrorEvent": null
+      }]
+    }
+  }
+}
