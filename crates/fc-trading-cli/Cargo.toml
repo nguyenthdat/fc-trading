@@ -14,7 +14,7 @@ readme = "README.md"
 clap.workspace = true
 color-eyre.workspace = true
 dotenvy.workspace = true
-ssi-fc-trading = { path = "../fc-trading" }
+ssi-fc-trading = { path = "../fc-trading", version = "0.1.0" }
 rpassword.workspace = true
 secrecy.workspace = true
 tokio.workspace = true

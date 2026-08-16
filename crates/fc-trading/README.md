@@ -1,14 +1,45 @@
 # ssi-fc-trading
 
-Async Rust client cho SSI FastConnect Trading.
+Async Rust client cho SSI FastConnect Trading, hỗ trợ xác thực, giao dịch, truy vấn tài khoản và streaming.
 
-Các invariant chính:
+## Cài đặt
 
-- 33 catalogued operations theo package Python 2.5.3, cộng AccessToken path cho authentication.
-- Read token và write token tách biệt.
-- Signed POST dùng chính JSON bytes được truyền trên wire.
-- Required core response fields decode strict; API mở rộng có `ApiResponse<serde_json::Value>` khi SDK tham chiếu không định nghĩa schema response.
-- Classic SignalR 1.3 qua `BroadcastHubV2`, reconnect có cancellation và backpressure.
-- TLS an toàn, không retry POST, không log secret.
+```bash
+cargo add ssi-fc-trading secrecy
+cargo add tokio --features macros,rt-multi-thread
+```
 
-Xem `../../README.md` để biết cấu hình, ví dụ và lệnh kiểm tra.
+## Ví dụ
+
+```rust
+use secrecy::SecretString;
+use ssi_fc_trading::{
+    AccountRequest, ClientConfig, Credentials, TradingClient, TwoFactorType,
+};
+
+#[tokio::main]
+async fn main() -> ssi_fc_trading::Result<()> {
+    let credentials = Credentials::from_base64_xml(
+        "consumer-id",
+        SecretString::from("consumer-secret"),
+        SecretString::from("base64-xml-private-key"),
+    )?;
+    let client = TradingClient::new(
+        ClientConfig::production()?,
+        credentials,
+        TwoFactorType::Pin,
+    )?;
+
+    let response = client
+        .stock_account_balance(&AccountRequest::new("YOUR_ACCOUNT"))
+        .await?;
+    println!("{}", response.message);
+    Ok(())
+}
+```
+
+Xem [README của project](https://github.com/nguyenthdat/fc-trading#readme) để biết cấu hình, CLI và quy trình phát hành.
+
+## License
+
+MIT

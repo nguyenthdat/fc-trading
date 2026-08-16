@@ -141,10 +141,11 @@ async fn capture(State(state): State<ServerState>, request: Request) -> Response
         .await
         .expect("test capture receiver remains open");
 
-    if let Some(failure) = &state.failure
-        && parts.uri.path() == failure.path
-    {
-        return (failure.status, failure.body.clone()).into_response();
+    match &state.failure {
+        Some(failure) if parts.uri.path() == failure.path => {
+            return (failure.status, failure.body.clone()).into_response();
+        }
+        Some(_) | None => {}
     }
     if parts.uri.path() == "/api/v2/Trading/AccessToken" {
         let body: Value = serde_json::from_slice(&body).expect("token request is JSON");

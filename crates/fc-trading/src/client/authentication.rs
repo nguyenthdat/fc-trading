@@ -29,11 +29,11 @@ impl TradingClient {
         let mut cached = self.inner.read_token.lock().await;
         let now = unix_timestamp()?;
         let skew = self.inner.config.token_refresh_skew().as_secs();
-        if !force_refresh
-            && let Some(token) = cached.as_ref()
-            && token.is_valid_at(now, skew)
-        {
-            return Ok(token.clone_secret());
+        match cached.as_ref() {
+            Some(token) if !force_refresh && token.is_valid_at(now, skew) => {
+                return Ok(token.clone_secret());
+            }
+            Some(_) | None => {}
         }
         let token = self.obtain_token("1", false).await?;
         let secret = token.clone_secret();
